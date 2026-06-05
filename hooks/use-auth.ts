@@ -115,6 +115,7 @@ export function useAuth(): UseAuthReturn {
         try {
           const authInfo = await handleOAuthCallback(window.location.href, getAuthConfig());
           await completeAuth(authInfo);
+          window.location.href = window.location.pathname;
         } catch (err) {
           setError(err instanceof Error ? err.message : 'Authentication failed');
           setAuthState('error');
