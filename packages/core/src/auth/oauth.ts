@@ -32,6 +32,7 @@ async function buildPkceParams(config: AuthConfig): Promise<URLSearchParams> {
     state: csrfToken,
     code_challenge: codeChallenge,
     code_challenge_method: 'S256',
+    prompt: 'login',
   });
 }
 
