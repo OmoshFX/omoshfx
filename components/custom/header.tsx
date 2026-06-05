@@ -85,6 +85,7 @@ export function Header({
         <a href="/analysis" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
           Analysis
         </a>
+        <a href="/flash-bot" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">⚡ Flash Bot</a>
       </div>
       <div className="flex items-center gap-3">
         {actions}
