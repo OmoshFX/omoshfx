@@ -212,7 +212,7 @@ export function BotPage() {
   useEffect(() => {
     if (!buyResult) return;
     const profit = buyResult.buyPrice ? buyResult.payout - buyResult.buyPrice : 0;
-    setLogs((prev: TradeLog[]) => [{
+    setLogs((prev) => [{
       id: Date.now().toString(),
       time: new Date().toLocaleTimeString(),
       signal,
@@ -251,7 +251,7 @@ export function BotPage() {
       // Simulation mode when not logged in
       const won = Math.random() > 0.45;
       const profit = won ? stakeNum * 0.89 : -stakeNum;
-      setLogs((prev: TradeLog[]) => [{ id: Date.now().toString(), time: new Date().toLocaleTimeString(), signal, contractMode: mode, stake: rule.stake, result: won ? 'won' : 'lost', profit: Math.round(profit * 100) / 100 }, ...prev].slice(0, 50));
+      setLogs((prev) => [{ id: Date.now().toString(), time: new Date().toLocaleTimeString(), signal, contractMode: mode, stake: rule.stake, result: won ? 'won' : 'lost', profit: Math.round(profit * 100) / 100 }, ...prev].slice(0, 50));
       setTotalProfit(p => Math.round((p + profit) * 100) / 100);
       setTradeCount(c => c + 1);
     }
