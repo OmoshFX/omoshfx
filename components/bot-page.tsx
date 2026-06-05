@@ -218,7 +218,7 @@ export function BotPage() {
       signal,
       contractMode: currentMode,
       stake: rule.stake,
-      result: profit >= 0 ? 'won' : 'lost',
+      result: (profit >= 0 ? 'won' : 'lost') as TradeLog['result'],
       profit: Math.round(profit * 100) / 100,
     }, ...prev].slice(0, 50));
     setTotalProfit(p => Math.round((p + profit) * 100) / 100);
@@ -251,7 +251,7 @@ export function BotPage() {
       // Simulation mode when not logged in
       const won = Math.random() > 0.45;
       const profit = won ? stakeNum * 0.89 : -stakeNum;
-      setLogs((prev) => [{ id: Date.now().toString(), time: new Date().toLocaleTimeString(), signal, contractMode: mode, stake: rule.stake, result: won ? 'won' : 'lost', profit: Math.round(profit * 100) / 100 }, ...prev].slice(0, 50));
+      setLogs((prev) => [{ id: Date.now().toString(), time: new Date().toLocaleTimeString(), signal, contractMode: mode, stake: rule.stake, result: (won ? 'won' : 'lost') as TradeLog['result'], profit: Math.round(profit * 100) / 100 }, ...prev].slice(0, 50));
       setTotalProfit(p => Math.round((p + profit) * 100) / 100);
       setTradeCount(c => c + 1);
     }
