@@ -32,7 +32,6 @@ async function buildPkceParams(config: AuthConfig): Promise<URLSearchParams> {
     state: csrfToken,
     code_challenge: codeChallenge,
     code_challenge_method: 'S256',
-    prompt: 'login',
   });
 }
 
@@ -74,7 +73,7 @@ export async function buildSignUpUrl(config: AuthConfig): Promise<string> {
  */
 export async function initiateLogin(config: AuthConfig): Promise<void> {
   const url = await buildAuthorizationUrl(config);
-  window.location.href = url;
+  window.location.assign(url);
 }
 
 /**
