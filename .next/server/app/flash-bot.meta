@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/flash-bot/layout,_N_T_/flash-bot/page,_N_T_/flash-bot"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/flash-bot/__PAGE__",
+    "/flash-bot",
+    "/_index",
+    "/_head"
+  ]
+}
